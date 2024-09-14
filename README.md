@@ -42,7 +42,7 @@
    ```
 
 ## Backend API Deployment
-1. In the [build_and_push.sh](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh) file, replace `AWS_REGION`, `AWS_ACCOUNT_ID`, and `ECR_REPOSITORY` with your correct AWS settings.
+1. In the [build_and_push.sh](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh) file, replace [AWS_REGION](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh#L4), [AWS_ACCOUNT_ID](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh#L5), and [ECR_REPOSITORY](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh#L6) with your correct AWS settings.
 
 2. Run [build_and_push.sh](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh) locally to build the Docker image and push it to ECR. Before running the script, update [the secret.yml](https://github.com/turingplanet/unified-api-docker/blob/main/secret.yml) file with your OpenAI API key.
 
