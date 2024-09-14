@@ -7,7 +7,7 @@
    ```
    git clone https://github.com/turingplanet/unified-api-docker.git
    git clone https://github.com/turingplanet/react-frontend-docker.git
-   git clone <repository_url_3>
+   git clone https://github.com/turingplanet/cloud-deployment.git
    ```
 * [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
