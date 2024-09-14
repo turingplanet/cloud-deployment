@@ -12,12 +12,12 @@
 * [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 ## Set up EC2 Instance
-1.  Generate an SSH key pair under the terraform folder path by running:
+1.  Generate an SSH key pair under [the terraform folder path](https://github.com/turingplanet/cloud-deployment/tree/main/terraform) by running:
     ```
     ssh-keygen -t rsa -b 2048 -f ./id_rsa
     ```
 
-2.  Navigate to the terraform directory and run the following commands:
+2.  Navigate to [the terraform directory](https://github.com/turingplanet/cloud-deployment/tree/main/terraform) and run the following commands:
     ```
     terraform init
     terraform apply
@@ -29,7 +29,7 @@
    ssh -i id_rsa ec2-user@<your_ec2_ip_address>
    ```
 
-4. Copy the content of ec2_build.sh to your EC2 instance and edit it to configure AWS and install Docker. Remember to replace the placeholder AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your own credentials in the script. Then execute the script.
+4. Copy the content of [ec2_build.sh](https://github.com/turingplanet/cloud-deployment/blob/main/script/ec2_build.sh) to your EC2 instance and edit it to configure AWS and install Docker. Remember to replace the placeholder AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your own credentials in the script. Then execute the script.
     ```
     chmod +x ec2_build.sh
     ./ec2_build.sh
@@ -54,17 +54,17 @@
    docker-compose up --pull always -d
    ```
 
-5. Run the `upload_db_data.sh` script locally to upload your MongoDB data to the EC2 instance. 
-    * Replace IP_ADDRESS with the public IP address of your EC2 instance.
-    * Replace LOCAL_DUMP_PATH with the full path to your local MongoDB dump directory.
+5. Run [the upload_db_data.sh](https://github.com/turingplanet/cloud-deployment/blob/main/script/upload_db_data.sh) script locally to upload your MongoDB data to the EC2 instance. 
+    * Replace [IP_ADDRESS](https://github.com/turingplanet/cloud-deployment/blob/main/script/upload_db_data.sh#L4) with the public IP address of your EC2 instance.
+    * Replace [LOCAL_DUMP_PATH](https://github.com/turingplanet/cloud-deployment/blob/main/script/upload_db_data.sh#L10) with the full path to your local MongoDB dump directory.
 
 6. Test your API by accessing `http://<ec2_ip_address>:5001/api/news_sentiment?symbol=TSLA&sort_field=time_published&sort_order=desc` in your browser.
 
 ## Frontend Setup
 
-1. Replace `API_BASE_URL` in [config.js](https://github.com/turingplanet/react-frontend-docker/blob/main/src/components/utils/config.js#L1) with your EC2 instance's public IP address.
+1. Replace [API_BASE_URL](https://github.com/turingplanet/react-frontend-docker/blob/main/src/components/utils/config.js#L1) in [config.js](https://github.com/turingplanet/react-frontend-docker/blob/main/src/components/utils/config.js#L1) with your EC2 instance's public IP address.
 
-2. Build the frontend Docker image and push it to ECR locally using [the build_and_push.sh script](https://github.com/turingplanet/react-frontend-docker/blob/main/build_and_push.sh). Remember to replace AWS_REGION, AWS_ACCOUNT_ID, and ECR_REPOSITORY with your correct AWS settings in the script before running it.
+2. Build the frontend Docker image and push it to ECR locally using the [build_and_push.sh script](https://github.com/turingplanet/react-frontend-docker/blob/main/build_and_push.sh). Remember to replace AWS_REGION, AWS_ACCOUNT_ID, and ECR_REPOSITORY with your correct AWS settings in the script before running it.
 
 3. Pull and run your frontend image from ECR:
    ```
