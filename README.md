@@ -46,7 +46,7 @@
 
 2. Run [build_and_push.sh](https://github.com/turingplanet/unified-api-docker/blob/main/build_and_push.sh) locally to build the Docker image and push it to ECR. Before running the script, update [the secret.yml](https://github.com/turingplanet/unified-api-docker/blob/main/secret.yml) file with your OpenAI API key.
 
-3. Create a docker-compose.yml file in EC2 and copy the content from [ec2-docker-compose.yml](https://github.com/turingplanet/unified-api-docker/blob/main/ec2-docker-compose.yml). Remember to replace the OPENAI_API_KEY value with your own OpenAI API key and update the image name to use your correct AWS account ID and ECR repository.
+3. Create a docker-compose.yml file in EC2 and copy the content from [ec2-docker-compose.yml](https://github.com/turingplanet/unified-api-docker/blob/main/ec2-docker-compose.yml). Remember to replace the OPENAI_API_KEY value with your own OpenAI API key and update the [image name](https://github.com/turingplanet/unified-api-docker/blob/main/ec2-docker-compose.yml#L16) to use your correct AWS account ID and ECR repository.
 
 4. Pull your backend ECR repository and run Docker Compose:
    ```
