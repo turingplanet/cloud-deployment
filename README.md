@@ -29,7 +29,7 @@
    ssh -i id_rsa ec2-user@<your_ec2_ip_address>
    ```
 
-4. Copy the content of [ec2_build.sh](https://github.com/turingplanet/cloud-deployment/blob/main/script/ec2_build.sh) to your EC2 instance and edit it to configure AWS and install Docker. Remember to replace the placeholder AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY with your own credentials in the script. Then execute the script.
+4. Copy the content of [ec2_build.sh](https://github.com/turingplanet/cloud-deployment/blob/main/script/ec2_build.sh) to your EC2 instance and edit it to configure AWS and install Docker. Remember to replace the placeholder [AWS_ACCESS_KEY_ID](https://github.com/turingplanet/cloud-deployment/blob/main/script/ec2_build.sh#L4) and [AWS_SECRET_ACCESS_KEY](https://github.com/turingplanet/cloud-deployment/blob/main/script/ec2_build.sh#L5) with your own [credentials](https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html) in the script. Then execute the script.
     ```
     chmod +x ec2_build.sh
     ./ec2_build.sh
